@@ -1,3 +1,20 @@
+import { LoginButton } from '@/app/auth/loginButton';
+
+export default function Page() {
+    return (
+        <div>
+            <h1>Se connecter</h1>
+            <LoginButton />
+        </div>
+    );
+}
+
+
+
+
+
+
+/*
 import style from './page.module.scss';
 
 import { authenticate } from '@/app/lib/actions';
@@ -154,4 +171,4 @@ export default function Login() {
             </section>
        
     );
-}
+}*/

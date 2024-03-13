@@ -4,15 +4,21 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
-
+const githubId = process.env.GITHUB_ID;
+const githubSecret = process.env.GITHUB_SECRET;
+const nextAuthSecret = process.env.SECRET_KEY;;
+if (!githubId || !githubSecret) {
+  throw new Error('GITHUB_ID and GITHUB_SECRET env variables undefined');
+}
 export const authConfig = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientId: githubId,
+      clientSecret: githubSecret,
     }),
   ],
+  secret: nextAuthSecret,
 } satisfies NextAuthOptions;
 
 export default NextAuth(authConfig)
