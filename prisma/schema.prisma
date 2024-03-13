@@ -11,6 +11,7 @@ generator client {
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   email     String   @unique
+  name    String?
   username  String?
   firstname String?
   lastname  String?
@@ -20,8 +21,22 @@ model User {
   country   String?
   zipcode   String?
   memberships Membership[]
+  accounts Account[]
 }
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refreshToken      String? @db.String
+  accessToken       String? @db.String
+  accessTokenExpires DateTime?
 
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.ObjectId
+
+  @@unique([provider, providerAccountId])
+}
 model Group {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
   name    String

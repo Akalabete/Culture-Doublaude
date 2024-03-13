@@ -1,6 +1,10 @@
+import { authConfig } from '@/pages/api/auth/[...nextauth]';
+import {getServerSession } from 'next-auth';
 import { LoginButton } from '@/app/auth/loginButton';
 
-export default function Page() {
+
+export default async function Page() {
+   
     return (
         <div>
             <h1>Se connecter</h1>
