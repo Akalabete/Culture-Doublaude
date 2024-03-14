@@ -1,5 +1,8 @@
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
-import { Session, getServerSession } from "next-auth";
+import { getServerSession } from "next-auth";
+import { LogoutButton } from "./LogoutButton";
+
+
 
 export const User = async() => {
     const session = await getServerSession(authConfig);
@@ -18,7 +21,7 @@ export const User = async() => {
                 <h2 className="card-title">{session.user.name}</h2>
                 <p>{session.user.email}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-secondary">Se déconnecter</button>
+                    <LogoutButton />
                 </div>
             </div>
         </div>

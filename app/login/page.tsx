@@ -2,15 +2,17 @@ import { authConfig } from '@/pages/api/auth/[...nextauth]';
 import {getServerSession } from 'next-auth';
 import { LoginButton } from '@/app/auth/LoginButton';
 import style from './page.module.scss';
+import { User } from '@/app/auth/User';
 
 export default async function Page() {
     const session = await getServerSession(authConfig);
     if (session) {
-        return <p className={style.paragraph}>{JSON.stringify(session, null, 2)}</p>}
+        return <User />
+    }
     return (
         <main>
             <div>
-                <h1>Se connecter</h1>
+            <h1 className="mt-[20vh]">Se connecter</h1>
                 <LoginButton />
             </div>
         </main>
