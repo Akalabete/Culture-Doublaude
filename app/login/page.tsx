@@ -7,13 +7,23 @@ import { User } from '@/app/auth/User';
 export default async function Page() {
     const session = await getServerSession(authConfig);
     if (session) {
-        return <User />
+        return (
+            <main>
+                <div className="flex mt-[20vh] justify-center h-screen">
+                    <div className="mx-auto">
+                        <User />
+                    </div>
+                </div>
+            </main>
+        )
     }
     return (
         <main>
-            <div>
-            <h1 className="mt-[20vh]">Se connecter</h1>
-                <LoginButton />
+            <div className="flex mt-[20vh] justify-center h-screen">
+                <div className="mx-auto">
+                    <h1>Connexion</h1>
+                    <LoginButton />
+                </div>
             </div>
         </main>
     );

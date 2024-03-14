@@ -11,6 +11,7 @@ export const User = async() => {
     }
 
     return (
+        <>
         <div className="card w-96 bg-base-100 shadow-xl">
             <div className="card-body">
                 <div className="avatar">
@@ -25,5 +26,6 @@ export const User = async() => {
                 </div>
             </div>
         </div>
+    </>
     )
 } 

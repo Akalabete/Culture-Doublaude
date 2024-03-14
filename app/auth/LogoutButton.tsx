@@ -3,7 +3,7 @@ import style from './LoginButton.module.scss';
 import { signOut } from 'next-auth/react';
 export const LogoutButton = () => {
     return (
-        <button className={style.loginbutton} 
+        <button className="btn btn-primary" 
         onClick={async () => {
             await signOut()
         }}>
