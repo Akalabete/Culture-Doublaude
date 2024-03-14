@@ -7,86 +7,48 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
-model User {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  email     String   @unique
-  name    String?
-  username  String?
-  firstname String?
-  lastname  String?
-  password  String?
-  street    String?
-  city      String?
-  country   String?
-  zipcode   String?
-  memberships Membership[]
-  accounts Account[]
-}
 model Account {
-  id                String  @id @default(auto()) @map("_id") @db.ObjectId
-  type              String
-  provider          String
-  providerAccountId String
-  refreshToken      String? @db.String
-  accessToken       String? @db.String
-  accessTokenExpires DateTime?
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId    
+  userId             String   @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  
+  access_token       String?  
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  
+  session_state      String?
 
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @db.ObjectId
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
-model Group {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  name    String
-  memberships Membership[]
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model Membership {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @db.ObjectId
-  group  Group  @relation(fields: [groupId], references: [id])
-  groupId String @db.ObjectId
+model User {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
 }
 
-model Referent {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  email     String   @unique
-  shopname  String
-  shopdesc  String
-  phone     String
-  website   String?
-  firstname String?
-  lastname  String?
-  photoslider String[]
-  street    String
-  city      String
-  country   String
-  zipcode   String
-  openingHours OpeningDayHours[]
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
 }
-
-model OpeningDayHours {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  day       String
-  opening   String
-  closing   String
-  lunchStart String?
-  lunchEnd   String?
-  referent  Referent @relation(fields: [referentId], references: [id])
-  referentId String @db.ObjectId
-  }
-model Product {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  description String
-  price       Float
-  stock       Int
-  photo       String
-  category    String
-  referentId  String? @db.ObjectId
-  productOwnerMail String
-  }
-
