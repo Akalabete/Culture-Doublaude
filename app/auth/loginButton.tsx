@@ -1,5 +1,5 @@
 "use client"
-import style from './loginButton.module.scss';
+import style from './LoginButton.module.scss';
 import { signIn } from 'next-auth/react';
 export const LoginButton = () => {
     return (

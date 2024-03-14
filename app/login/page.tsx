@@ -1,6 +1,6 @@
 import { authConfig } from '@/pages/api/auth/[...nextauth]';
 import {getServerSession } from 'next-auth';
-import { LoginButton } from '@/app/auth/loginButton';
+import { LoginButton } from '@/app/auth/LoginButton';
 import style from './page.module.scss';
 
 export default async function Page() {
