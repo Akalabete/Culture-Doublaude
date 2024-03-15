@@ -12,10 +12,10 @@ export const User = async() => {
 
     return (
         <>
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-primary-content shadow-xl">
             <div className="card-body">
                 <div className="avatar">
-                    <div className="w-24 rounded">
+                    <div className="w-24 rounded-full">
                         <img src={session.user.image ?? ""} alt="avatar" />
                     </div>
                 </div>

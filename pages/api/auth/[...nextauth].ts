@@ -18,6 +18,14 @@ export const authConfig = {
       clientSecret: githubSecret,
     }),
   ],
+  callbacks: {
+    session : async ({session, user}) => {
+      if (session.user){
+        session.user.id = user.id;
+      }
+      return session;
+    }
+  },
   secret: nextAuthSecret,
 } satisfies NextAuthOptions;
 

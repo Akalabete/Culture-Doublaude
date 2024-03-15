@@ -1,8 +1,8 @@
 import { authConfig } from '@/pages/api/auth/[...nextauth]';
 import {getServerSession } from 'next-auth';
-import { LoginButton } from '@/app/auth/LoginButton';
+import { LoginButton } from '@/src/auth/LoginButton';
 import style from './page.module.scss';
-import { User } from '@/app/auth/User';
+import { User } from '@/src/auth/User';
 
 export default async function Page() {
     const session = await getServerSession(authConfig);
