@@ -1,13 +1,9 @@
 import { LogoutButton } from "./LogoutButton";
-import { getAuthSession } from "../lib/auth";
+import { getRequiredAuthSession } from "../lib/auth";
 
 
 export const User = async() => {
-    const session = await getAuthSession();
-    
-    if (!session?.user) {
-        return <p>Aucun utilisateurs enregistrés</p>
-    }
+    const session = await getRequiredAuthSession();
 
     return (
         <>
