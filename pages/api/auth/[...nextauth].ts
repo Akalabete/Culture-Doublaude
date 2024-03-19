@@ -52,11 +52,13 @@ export const authConfig = {
     createUser: async (message) => {
       const userId = message.user.id;
       const email = message.user.email;
+      const name = message.user.name;
       if (!userId || !email){
         return;
       }
       const stripeCustomer = await stripe.customers.create({
-        email
+        email,
+        name: name ?? undefined,
       });
       await prisma.user.update({
         where: {

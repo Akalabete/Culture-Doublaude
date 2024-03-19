@@ -45,8 +45,8 @@ const Header: React.FC = () => {
                 </Link>
             </li>
             <li>
-                <Link href="/boutique">
-                    <span className={`link ${pathname === '/boutique' ? 'active' : ''}`} style={{ color: pathname === '/boutique' ? 'red' : 'inherit' }}>Boutique</span>
+                <Link href="/eshop">
+                    <span className={`link ${pathname === '/eshop' ? 'active' : ''}`} style={{ color: pathname === '/eshop' ? 'red' : 'inherit' }}>Boutique</span>
                 </Link>
             </li>
             <li>
