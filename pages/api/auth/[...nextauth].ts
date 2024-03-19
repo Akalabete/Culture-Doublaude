@@ -4,6 +4,7 @@ import GoogleProvider from "next-auth/providers/google";
 import Email from "next-auth/providers/email";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
+import { stripe } from "../../../src/lib/stripe";
 
 const prisma = new PrismaClient()
 const githubId = process.env.GITHUB_ID;
@@ -45,8 +46,31 @@ export const authConfig = {
         session.user.id = user.id;
       }
       return session;
-    }
+    },
   },
+  events: {
+    createUser: async (message) => {
+      const userId = message.user.id;
+      const email = message.user.email;
+      if (!userId || !email){
+        return;
+      }
+      const stripeCustomer = await stripe.customers.create({
+        email
+      });
+      await prisma.user.update({
+        where: {
+          id: userId,
+        },
+        data: {
+          stripeCustomerId: stripeCustomer.id,
+        }
+      });
+      
+    },
+      
+  },
+
   secret: nextAuthSecret,
 } satisfies NextAuthOptions;
 
