@@ -1,5 +1,5 @@
 import { Button } from "../../components/ui/button";
-
+import { redirect } from 'next/navigation';
 import { getAuthSession } from "@/src/lib/auth";
 import prisma from "@/src/lib/prisma";
 import { stripe } from "@/src/lib/stripe"; 
@@ -39,6 +39,13 @@ export const BuyButton = () => {
                         success_url: "http://localhost:3000/success",
                         cancel_url: "http://localhost:3000/cancel",
                     });
+
+                    
+
+                    if (!session.url) {
+                        throw new Error("No session URL");
+                    }
+                    redirect(session.url);
                 }}
             >
                 Acheter cet article

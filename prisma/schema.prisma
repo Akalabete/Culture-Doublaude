@@ -42,8 +42,12 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-
+  userPlan         UserPlan  @default(FREE)
   stripeCustomerId String?
+}
+enum UserPlan {
+  FREE
+  PREMIUM
 }
 
 model VerificationToken {
