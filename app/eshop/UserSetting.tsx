@@ -4,7 +4,10 @@ import { getAuthSession } from "@/src/lib/auth";
 import prisma from "@/src/lib/prisma";
 import { stripe } from "@/src/lib/stripe"; 
 
-export const BuyButton = () => {
+
+
+
+export const AccountSettingButton = () => {
     return (
         <form>
             <Button
@@ -33,20 +36,10 @@ export const BuyButton = () => {
                     if (!stripeCustomerId) {
                         throw new Error("No stripe customer ID");
                     }
-                    const session = await stripe.checkout.sessions.create({
-                        customer: stripeCustomerId,
-                        mode: "subscription",
-                        payment_method_types: ["card"],
-                        line_items: [
-                          {
-                            price: process.env.NODE_ENV === "development" ? "price_1Ow2s7BZW7iXZSlZh40eDtnQ" : "",
-                            quantity: 1,
-                          }
-                        ],
-                        success_url: "http://localhost:3000/success",
-                        cancel_url: "http://localhost:3000/cancel",
+                    const session = await stripe.billingPortal.sessions.create({
+                        customer: user.stripeCustomerId ?? "",
+                        return_url: "http://localhost:3000/account/billing",
                     });
-
                     
 
                     if (!session.url) {
@@ -55,7 +48,7 @@ export const BuyButton = () => {
                     redirect(session.url);
                 }}
             >
-                Acheter cet article
+                Accounts Settings
             </Button>
         </form>
     )
