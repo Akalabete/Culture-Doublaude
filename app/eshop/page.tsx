@@ -1,3 +1,4 @@
+import Product from '../components/Product'
 import { BuyButton} from './buyButton'
 
 
@@ -39,17 +40,12 @@ export default function Page() {
                     <h2>abo récurent</h2>
                     <BuyButton />
                 </div>
-                <div>
+                <div className="flex flex-col gap-8">
                     <h2>Produits</h2>
                     <div className="grid grid-cols-3 gap-4">
                         {products.map((product) => (
-                            <div key={product.id} className="border p-4">
-                                <h3>{product.name}</h3>
-                                <p>{product.description}</p>
-                                <img src={product.image} alt={product.name} />
-                                <p>{product.price} €</p>
-                                <button className="bg-blue-500 text-white p-2 rounded" onClick={() => console.log('add to cart')}>Ajouter au panier</button>
-                            </div>
+                            <Product key={product.id} product={product} />
+                            
                         ))}
                     </div>
                 </div>
@@ -57,3 +53,11 @@ export default function Page() {
         </main>
     )
   }
+
+  //<div key={product.id} className="border p-4">
+  //<h3>{product.name}</h3>
+  ///<p>{product.description}</p>
+  //<img src={product.image} alt={product.name} />
+  //<p>{product.price} €</p>
+  //<button className="bg-blue-500 text-white p-2 rounded" onClick={() => console.log('add to cart')}>Ajouter au panier</button>
+//</div>
