@@ -42,17 +42,22 @@ const Cart = () => {
           </ul>
         )}
 
-      <div className="mt-4">
-        <p className="text-lg font-semibold">
-          Total: 120 €
-        </p>
+      
+        {totalAmount>0 ?
+        (
+          <><div className="mt-4">
+            <p className="text-lg font-semibold">
+              Total: {totalAmount.toFixed(2)} €
+            </p>
+          </div><button
+            className="mt-4 px-4 py-2 bg-green-500 text-white hover:bg-green-600 rounded focus:outline-non focus:ring-green-500 focus:ring-offset-2"
+            onClick={() => console.log('checkout')}>
+              Commander
+            </button></>
+        ): 
+        ("")
+        }
       </div>
-      <button 
-        className="mt-4 px-4 py-2 bg-green-500 text-white hover:bg-green-600 rounded focus:outline-non focus:ring-green-500 focus:ring-offset-2"
-        onClick={() => console.log('checkout')}>
-        Commander
-      </button>
-    </div>
     )
   }
 export default Cart

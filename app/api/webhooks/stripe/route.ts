@@ -2,6 +2,30 @@ import  { NextRequest, NextResponse }  from 'next/server'
 import { Stripe } from 'stripe'
 import prisma from '@/src/lib/prisma'
 
+export const POST = async (request: NextRequest) => {
+    const {products} = await request.json();
+    const data: Product[] = products;
+    const prods = await Stripe.products.list();
+    console.log(products)
+    return NextResponse.json({url: ""})
+}
+export const findUserFromCustomer = async (stripeCustomerId: unknown) => {
+    if (typeof stripeCustomerId !== 'string') {
+        return null;
+    }
+    return prisma.user.findFirst({
+        where: {
+            stripeCustomerId,
+        }
+    });
+}
+
+
+/*
+import  { NextRequest, NextResponse }  from 'next/server'
+import { Stripe } from 'stripe'
+import prisma from '@/src/lib/prisma'
+
 export const POST = async (req: NextRequest) => {
     const body = await req.json() as Stripe.Event;
     
@@ -93,4 +117,4 @@ export const findUserFromCustomer = async (stripeCustomerId: unknown) => {
             stripeCustomerId,
         }
     });
-}
+}*/
