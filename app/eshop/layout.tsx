@@ -6,8 +6,9 @@ export default function Layout({
     children: React.ReactNode;
 }) {
     
-    return 
-    <CartProvider>
-        <div>{children}</div>
-    </CartProvider>
+    return (
+        <CartProvider>
+            <div>{children}</div>
+        </CartProvider>
+    )
 }
