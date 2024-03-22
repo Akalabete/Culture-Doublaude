@@ -40,11 +40,17 @@ export const CartProvider: React.FunctionComponent<CartProviderProps> = ({childr
         setCart(updatedCart);
     }
     const decrementQuantity = (productId: number) => {
-        const updatedCart = cart.map((item) =>
-            item.id === productId.toString() ? { ...item, quantity: item.quantity > 0 ?item.quantity -1 : 0 } : item
+        let updatedCart = cart.map((item) =>
+          item.id === productId.toString() ? { ...item, quantity: item.quantity > 0 ? item.quantity - 1 : 0 } : item
         )
+      
+        const product = updatedCart.find((item: Product) => item.id === productId.toString());
+        if (product && product.quantity === 0) {
+          updatedCart = updatedCart.filter((item) => item.id !== productId.toString());
+        }
+      
         setCart(updatedCart);
-    }
+      }
     return (
         <CartContext.Provider value={{cart, addToCart, removeFromCart, incrementQuantity, decrementQuantity}}>
             {children}
