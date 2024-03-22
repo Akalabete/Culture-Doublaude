@@ -35,14 +35,14 @@ export default function Page() {
     return (
 
         <main>
-            <div className="flex mt-[20vh] justify-center h-screen">
+            <div className="flex flex-col  justify-center h-screen">
                 <div className="mx-auto">
                     <h2>abo récurent</h2>
                     <BuyButton />
                 </div>
-                <div className="flex flex-col gap-8">
-                    <h2>Produits</h2>
-                    <div className="grid grid-cols-3 gap-4">
+                <div className="flex flex-col gap-8 mx-auto">
+                    <h2 className="mt-[10vh] mx-auto">Produits</h2>
+                    <div className="w-150  grid grid-cols-3 gap-1">
                         {products.map((product) => (
                             <Product key={product.id} product={product} />
                             
