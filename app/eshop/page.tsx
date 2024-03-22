@@ -1,6 +1,8 @@
-import Product from '../components/Product'
-import { BuyButton} from './buyButton'
+'use client';
 
+import Product from '../components/Product';
+import { BuyButton} from './buyButton';
+import Cart from '../components/Cart';
 
 const products: Product[] = [
     {
@@ -36,10 +38,7 @@ export default function Page() {
 
         <main>
             <div className="flex flex-col  justify-center h-screen">
-                <div className="mx-auto">
-                    <h2>abo récurent</h2>
-                    <BuyButton />
-                </div>
+                
                 <div className="flex flex-col gap-8 mx-auto">
                     <h2 className="mt-[10vh] mx-auto">Produits</h2>
                     <div className="w-150  grid grid-cols-3 gap-1">
@@ -48,6 +47,7 @@ export default function Page() {
                             
                         ))}
                     </div>
+                    <Cart />
                 </div>
             </div>
         </main>
@@ -60,4 +60,10 @@ export default function Page() {
   //<img src={product.image} alt={product.name} />
   //<p>{product.price} €</p>
   //<button className="bg-blue-500 text-white p-2 rounded" onClick={() => console.log('add to cart')}>Ajouter au panier</button>
+//</div>
+
+
+////<div className="mx-auto">
+//<h2>abo récurent</h2>
+//<BuyButton />
 //</div>
