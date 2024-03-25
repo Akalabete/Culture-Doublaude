@@ -10,12 +10,28 @@ const Cart = () => {
 
   const handleDecrement = (productId: number) => {
     decrementQuantity(productId);
-    
+  }
+
+  const checkout = async () => {
+    await fetch("http://localhost:3000/api/checkout",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({products: cart})
+    }).then((response) => {
+      return response.json()
+    }).then((response) => {
+      console.log(response.url);
+        if(response.url){
+          // console.log(response.url);
+      }
+    })
   }
   return (
     <div className="border rounded-lg p-4 shadow-md">
 
-      <h2 className="text-lg font-semibold mb-4" text-center>Panier</h2>
+      <h2 className="text-lg font-semibold mb-4 text-center">Panier</h2>
       {cart.length === 0 ?
          (<p>Votre panier est vide</p>)
         :(
@@ -51,7 +67,7 @@ const Cart = () => {
             </p>
           </div><button
             className="mt-4 px-4 py-2 bg-green-500 text-white hover:bg-green-600 rounded focus:outline-non focus:ring-green-500 focus:ring-offset-2"
-            onClick={() => console.log('checkout')}>
+            onClick={checkout}>
               Commander
             </button></>
         ): 
