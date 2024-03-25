@@ -24,7 +24,7 @@ const Cart = () => {
     }).then((response) => {
       console.log(response.url);
         if(response.url){
-          // console.log(response.url);
+          window.location.href = response.url;
       }
     })
   }

@@ -52,13 +52,13 @@ export const POST = async (request: any) => {
         }
     }
     const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card', 'link'],
+        payment_method_types: ['card'],
         line_items: stripeItems,
         mode: 'payment',
         success_url: `http://localhost:3000/success`,
         cancel_url: `http://localhost:3000/cancel`,
     });
-    return NextResponse.json({url: ""})
+    return NextResponse.json({url: session.url})
 }
 
 /*  methode pour créer des produits dans le catalogue stripe : 
