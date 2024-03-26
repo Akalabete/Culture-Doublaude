@@ -80,12 +80,11 @@ export const POST = async (request: any) => {
                         unit_amount: product.price * 100,
                         currency: "eur",
                     },
-                    }
-                );
-            }
+                });
+            }s
         }
     } catch (error) {
-        console.error("creating a product");
+        console.error("creating a product", error);
     };
        
     

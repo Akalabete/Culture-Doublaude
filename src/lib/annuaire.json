@@ -1,0 +1,161 @@
+{
+    "commerces": [
+        {
+            "nom": "Nom du commerce1",
+            "adresse": "Adresse du commerce",
+            "ville": "Ville du commerce1",
+            "telephone": "Numéro de téléphone1",
+            "site": "URL du site web1",
+            "email": "commerçant1@com.com",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        },
+        {
+            "nom": "Nom du commerce2",
+            "adresse": "Adresse du commerce",
+            "ville": "Ville du commerce",
+            "telephone": "Numéro de téléphone",
+            "site": "URL du site web",
+            "email": "commerçant2@com.com",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        },
+        {
+            "nom": "Nom du commerce3",
+            "adresse": "Adresse du commerce3",
+            "ville": "Ville du commerce3",
+            "telephone": "Numéro de téléphone3",
+            "site": "URL du site web3",
+            "email": "commerçant3@com.com",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        }
+    ],
+    "artisans": [
+        {
+            "nom": "Nom de l'artisan1",
+            "adresse": "Adresse de l'artisan1",
+            "ville": "Ville de l'artisan1",
+            "telephone": "Numéro de téléphone1",
+            "site": "URL du site web1",
+            "email": "Adresse email1",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        },
+        {
+            "nom": "Nom de l'artisan2",
+            "adresse": "Adresse de l'artisan2",
+            "ville": "Ville de l'artisan2",
+            "telephone": "Numéro de téléphone2",
+            "site": "URL du site web2",
+            "email": "Adresse email2",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        },
+        {
+            "nom": "Nom de l'artisan3",
+            "adresse": "Adresse de l'artisan3",
+            "ville": "Ville de l'artisan3",
+            "telephone": "Numéro de téléphone3",
+            "site": "URL du site web3",
+            "email": "Adresse email3",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        }
+    ],
+    "services": [
+        {
+            "nom": "Nom du service1",
+            "adresse": "Adresse du service1",
+            "ville": "Ville du service1",
+            "telephone": "Numéro de téléphone1",
+            "site": "URL du site web1",
+            "email": "Adresse email1",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        },
+        {
+            "nom": "Nom du service2",
+            "adresse": "Adresse du service2",
+            "ville": "Ville du service2",
+            "telephone": "Numéro de téléphone2",
+            "site": "URL du site web2",
+            "email": "Adresse email2",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        },
+        {
+            "nom": "Nom du service3",
+            "adresse": "Adresse du service3",
+            "ville": "Ville du service3",
+            "telephone": "Numéro de téléphone3",
+            "site": "URL du site web3",
+            "email": "Adresse email3",
+            "jours_et_heures_ouverture": {
+                "LUN": "8h-12h 14h-17h",
+                "MAR": "8h-12h 14h-17h",
+                "MER": "8h-12h 14h-17h",
+                "JEU": "8h-12h 14h-17h",
+                "VEN": "8h-12h 14h-17h",
+                "SAM": "Fermé",
+                "DIM": "Fermé"
+            }
+        }
+    ]
+  }
