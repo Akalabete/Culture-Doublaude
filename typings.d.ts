@@ -7,3 +7,7 @@ interface Product {
     url: string;
     quantity: number;
 }
+
+interface ServiceCard {
+    
+}
