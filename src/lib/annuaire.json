@@ -1,161 +1,366 @@
 {
-    "commerces": [
-        {
-            "nom": "Nom du commerce1",
-            "adresse": "Adresse du commerce",
-            "ville": "Ville du commerce1",
-            "telephone": "Numéro de téléphone1",
-            "site": "URL du site web1",
-            "email": "commerçant1@com.com",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+    "Commerce": {
+        "Restauration": [
+            {
+                "name" : "restau 1",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test@testy.fr",
+                "url" : "www.url1.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "8H-12H 14H-18H",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H 14H-18H",
+                    "SAM": "Fermé",
+                    "DIM": "Fermé"
+                }
+            },
+            {
+                "name" : "pizzeria du coin",
+                "adress" : "1 rue Bel'air", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        },
-        {
-            "nom": "Nom du commerce2",
-            "adresse": "Adresse du commerce",
-            "ville": "Ville du commerce",
-            "telephone": "Numéro de téléphone",
-            "site": "URL du site web",
-            "email": "commerçant2@com.com",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ],
+        "Bar": [
+            {
+                "name" : "bar 1",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        },
-        {
-            "nom": "Nom du commerce3",
-            "adresse": "Adresse du commerce3",
-            "ville": "Ville du commerce3",
-            "telephone": "Numéro de téléphone3",
-            "site": "URL du site web3",
-            "email": "commerçant3@com.com",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ],
+        "Pharmacie": [
+            {
+                "name" : "pharmacie 1",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        }
-    ],
-    "artisans": [
-        {
-            "nom": "Nom de l'artisan1",
-            "adresse": "Adresse de l'artisan1",
-            "ville": "Ville de l'artisan1",
-            "telephone": "Numéro de téléphone1",
-            "site": "URL du site web1",
-            "email": "Adresse email1",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ]
+    },
+    "Services": {
+        "Mairie": [
+            {
+                "name" : "mairie de Saint Aulaye",
+                "adress" : "6 rue du docteur Lacroix", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
+            },
+            {
+                "name" : "mairie de Saint Privat en Périgord",
+                "adress" : "38 place de la mairie", 
+                "zipcode" : "24410", 
+                "city" : "Saint Privat en Périgord",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        },
-        {
-            "nom": "Nom de l'artisan2",
-            "adresse": "Adresse de l'artisan2",
-            "ville": "Ville de l'artisan2",
-            "telephone": "Numéro de téléphone2",
-            "site": "URL du site web2",
-            "email": "Adresse email2",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ],
+        "Ecole": [
+            {
+                "name" : "école primaire de Saint Aulaye",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        },
-        {
-            "nom": "Nom de l'artisan3",
-            "adresse": "Adresse de l'artisan3",
-            "ville": "Ville de l'artisan3",
-            "telephone": "Numéro de téléphone3",
-            "site": "URL du site web3",
-            "email": "Adresse email3",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ]     
+    },
+    "Artisans": {
+        "Plombier": [
+            {
+                "name" : "plombier 1",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
+            },
+            {
+                "name" : "plombier 2",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        }
-    ],
-    "services": [
-        {
-            "nom": "Nom du service1",
-            "adresse": "Adresse du service1",
-            "ville": "Ville du service1",
-            "telephone": "Numéro de téléphone1",
-            "site": "URL du site web1",
-            "email": "Adresse email1",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ],
+        "Electricien": [
+            {
+                "name" : "electricien 1",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        },
-        {
-            "nom": "Nom du service2",
-            "adresse": "Adresse du service2",
-            "ville": "Ville du service2",
-            "telephone": "Numéro de téléphone2",
-            "site": "URL du site web2",
-            "email": "Adresse email2",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ]
+    },
+    "Associations": {
+        "Sport": [
+            {
+                "name" : "club de foot de Saint Aulaye",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
+            },
+            {
+                "name" : "club de handball de Saint Aulaye",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        },
-        {
-            "nom": "Nom du service3",
-            "adresse": "Adresse du service3",
-            "ville": "Ville du service3",
-            "telephone": "Numéro de téléphone3",
-            "site": "URL du site web3",
-            "email": "Adresse email3",
-            "jours_et_heures_ouverture": {
-                "LUN": "8h-12h 14h-17h",
-                "MAR": "8h-12h 14h-17h",
-                "MER": "8h-12h 14h-17h",
-                "JEU": "8h-12h 14h-17h",
-                "VEN": "8h-12h 14h-17h",
-                "SAM": "Fermé",
-                "DIM": "Fermé"
+        ],
+        "Culture": [
+            {
+                "name" : "club de théatre de Saint Aulaye",
+                "adress" : "12 rue du champ de foire", 
+                "zipcode" : "24410", 
+                "city" : "Saint Aulaye",
+                "description" : "string", 
+                "phone" : "0123456789",
+                "email" : "test2@testy.fr",
+                "url" : "www.url2.com",
+                "photo": [
+                    "url1",
+                    "url2",
+                    "url3"
+                ],
+                "lat": 44.8966, 
+                "long": 0.2724,
+                "openingDaysHours": {
+                    "LUN": "Fermé",
+                    "MAR": "8H-12H 14H-18H",
+                    "MER": "8H-12H 14H-18H",
+                    "JEU": "8H-12H 14H-18H",
+                    "VEN": "8H-12H",
+                    "SAM": "8H-12H 14H-18H",
+                    "DIM": "Fermé"
+                }
             }
-        }
-    ]
-  }
+        ]
+    }
+}

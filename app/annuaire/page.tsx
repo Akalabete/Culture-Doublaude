@@ -1,30 +1,14 @@
 'use client';
 import { useEffect, useState } from "react";
-
+import annuaire from '../../src/lib/annuaire.json';
 export default function Page() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<object>({});
+    const [selectedType, setSelectedType] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     useEffect(() => {
-        fetch('../src/lib/annuaire.json')
-        .then(response => response.json())
-        .then(data => {
-            setData(data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+        setData(annuaire)
     }, []);
-
-    const filterData = (buttonType : string) => {
-        let filteredData;
-        if (buttonType==="Commerce") {
-            filteredData = data.filter((item) => item.type === "Commerce");
-        } else if (buttonType==="Artisan") {
-            filteredData = data.filter((item) => item.type === "Artisan");
-        } else if (buttonType==="Service") {
-            filteredData = data.filter((item) => item.type === "Service");
-        }
-        console.log(filteredData);
-    }
+    
     function success(pos: { coords: any; }) {
         var crd = pos.coords; console.log("Your current position is:");
         console.log(`Latitude : ${crd.latitude}`);
@@ -57,70 +41,71 @@ export default function Page() {
             timeout: 5000,
             maximumAge: 0,
          }; 
-            if (navigator.geolocation) { 
-                navigator.permissions .query({ name: "geolocation" })
-                .then(function (result) { 
-                    console.log(result);
-                    if (result.state === "granted") 
-                    {
-                        navigator.geolocation.getCurrentPosition(success, errors, options)
-                    }
-                    else if (result.state === "prompt") 
-                    { 
-                        navigator.geolocation.getCurrentPosition(success, errors, options)
-                    } else if (result.state === "denied") 
-                    { 
-                        zipCode();
-                    } 
-                });
-            } else 
+        if (navigator.geolocation) { 
+            navigator.permissions .query({ name: "geolocation" })
+            .then(function (result) { 
+                console.log(result);
+                if (result.state === "granted") 
                 {
-                console.log("Geolocation is not supported by this browser."); 
+                    navigator.geolocation.getCurrentPosition(success, errors, options)
                 }
-        }, []);
+                else if (result.state === "prompt") 
+                { 
+                    navigator.geolocation.getCurrentPosition(success, errors, options)
+                } else if (result.state === "denied") 
+                { 
+                    zipCode();
+                } 
+            });
+        } else 
+        {
+        console.log("Geolocation is not supported by this browser."); 
+        }
+    }, []);
+    if(!data) {
+        return <div>Chargement...</div>
+    }
+    const handleTypeClick = (type : any) => {
+        setSelectedType(type);
+    }
+    const handleCategoryClick = (category) => {
+        setSelectedCategory(category);
+    };
     return (
-        <>
-            <div className="flex flex-col text-center mt-[13vh] justify-center ">
-                <h1 className="text-4xl font-bold">Annuaire des Commerces, Artisans et Services de la Double</h1>
-                <p className=" text-xl font-semibold mt-4">Afin d&apos;améliorer cette recherche, merci d&apos;accepter la géolocalisation</p>
-                <h2 className="text-4xl font-bold mt-6">Vous recherchez : </h2>
-                <div className="flex flex-row w-1/2 space-around mx-auto mt-4">
-                    <button 
-                        className=" text-xl mx-auto btn btn-primary  w-40 mt-2 px-4"
-                        onClick={() => filterData("Commerce")}
-                        >
-                            Commerce?
-                    </button>
-                    <button 
-                        className=" text-xl mx-auto btn btn-primary  w-40 mt-2 px-4"
-                        onClick={() => filterData("Artisan")}
-                        >
-                            Artisan?
-                    </button>
-                    <button 
-                        className=" text-xl mx-auto btn btn-primary  w-40 mt-2 px-4"
-                        onClick={() => filterData("Service")}
-                        >
-                            Service?
-                    </button>
-                </div>
+        <div className="mt-[12vh]">
+            <div className="w-1/4 flex mx-auto">
+                {Object.keys(data).map((type) => (
+                    <button className="btn btn-primary mx-4 rounded" key={type} onClick={() => handleTypeClick(type)}>
+                        {type}
+                </button>
+                ))}
             </div>
-            <div className="grid">
-                <div className="flex flex-row w-1/2 space-around mx-auto mt-4">
-                    {data.map((item) => (
-                        <div className="flex flex-col w-1/3" key={item.id}>
-                            <h3>{item.name}</h3>
-                            <p>{item.type}</p>
-                            <p>{item.address}</p>
-                            <p>{item.zip}</p>
-                            <p>{item.city}</p>
-                            <p>{item.phone}</p>
-                            <p>{item.mail}</p>
-                        </div>
-                    ))}
-                </div>
+            <div className="flex w-3/5 mx-auto mt-3">
+                {selectedType && (
+                    <div className="flex flex-wrap">
+                         {Object.keys(data[selectedType]).map((category) => (
+                            <button className="btn btn-secondary mx-4 mt-2 rounded" key={category} onClick={() => handleCategoryClick(category)}>
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                )}
             </div>
-        </>
+            <div className="results">
+
+                {selectedType && selectedCategory && (
+                    <div className="flex flex-wrap">
+                        {Object.keys(data[selectedType][selectedCategory]).map((item) => (
+                            <div className="card" key={item}>
+                                <h1> {data.selectedType.selectedCategory.name}</h1>
+                            </div>
+                    </div>
+                   ))}
+                  )
+                }
+            </div>
+                
+        </div>      
     )
 }
 
