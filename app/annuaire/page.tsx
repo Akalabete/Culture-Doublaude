@@ -1,10 +1,13 @@
 'use client';
 import { useEffect, useState } from "react";
+import {ReferencedCard} from "../components/Referenced";
 import annuaire from '../../src/lib/annuaire.json';
 export default function Page() {
     const [data, setData] = useState<object>({});
     const [selectedType, setSelectedType] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [result, setResult] = useState<ServiceCard[]>([]);
+    
     useEffect(() => {
         setData(annuaire)
     }, []);
@@ -62,52 +65,75 @@ export default function Page() {
         console.log("Geolocation is not supported by this browser."); 
         }
     }, []);
-    if(!data) {
-        return <div>Chargement...</div>
-    }
+    
     const handleTypeClick = (type : any) => {
+        setSelectedCategory(null);
         setSelectedType(type);
     }
-    const handleCategoryClick = (category) => {
+    
+    const handleCategoryClick = (category: any) => {
+        
         setSelectedCategory(category);
+        
     };
+    useEffect(() => {
+        if (selectedType && selectedCategory && data[selectedType][selectedCategory]) {
+            setResult(data[selectedType][selectedCategory]);
+        }
+    }, [selectedType, selectedCategory, data]);
     return (
         <div className="mt-[12vh]">
-            <div className="w-1/4 flex mx-auto">
-                {Object.keys(data).map((type) => (
-                    <button className="btn btn-primary mx-4 rounded" key={type} onClick={() => handleTypeClick(type)}>
-                        {type}
-                </button>
-                ))}
-            </div>
-            <div className="flex w-3/5 mx-auto mt-3">
-                {selectedType && (
+            {!data ? 
+            (
+                <div>Chargement...</div>
+            ) :
+            (
+            <>
+                <div className="w-1/4 flex mx-auto">
+                    {Object.keys(data).map((type) => (
+                        <button className="btn btn-primary mx-4 rounded" key={type} onClick={() => handleTypeClick(type)}>
+                            {type}
+                    </button>
+                    ))}
+                </div>
+                <div className="flex w-3/5 mx-auto mt-3">
+                    {selectedType && (
+                        <div className="flex flex-wrap">
+                            {Object.keys(data[selectedType]).map((category) => (
+                                <button className="btn btn-secondary mx-4 mt-2 rounded" key={category} onClick={() => handleCategoryClick(category)}>
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </div>
+                <div>
+                {selectedType && selectedCategory && result && (
                     <div className="flex flex-wrap">
-                         {Object.keys(data[selectedType]).map((category) => (
-                            <button className="btn btn-secondary mx-4 mt-2 rounded" key={category} onClick={() => handleCategoryClick(category)}>
-                                {category}
-                            </button>
+                        {result.map((item: ServiceCard, index: number) => (
+                            <ReferencedCard key={index} item={item} />
                         ))}
                     </div>
-                )}
-            </div>
-            <div className="results">
-
-                {selectedType && selectedCategory && (
-                    <div className="flex flex-wrap">
-                        {Object.keys(data[selectedType][selectedCategory]).map((item) => (
-                            <div className="card" key={item}>
-                                <h1> {data.selectedType.selectedCategory.name}</h1>
-                            </div>
-                    </div>
-                   ))}
-                  )
-                }
-            </div>
-                
-        </div>      
+                )} 
+                </div>   
+            </>
+            )}
+        </div>
     )
 }
 
 
 
+/*
+<div className="results">
+                {selectedType && selectedCategory && (
+                    <div className="flex flex-wrap">
+                        {Object.keys(data[selectedType][selectedCategory]).map((item: string, index: number) => (
+                            <div className="card h-32 border-blue-500" key={index}>
+                                <h2> {item.name}</h2>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+            */

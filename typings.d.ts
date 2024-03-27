@@ -9,8 +9,6 @@ interface Product {
 }
 
 interface ServiceCard {
-    type: string // "Service" , "Commerce", "Artisan", "Association"
-    cat: string // "Alimentation", "Santé", "Beauté", "Services", "Loisirs", "Habitat", "Mobilité", "Sport", "Restauration", "Autres"
     name: string; // 
     adress: string; //
     zipcode: number; // 
