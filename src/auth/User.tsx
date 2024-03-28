@@ -20,15 +20,15 @@ export const User = async() => {
                     <h2 className="card-title">{session.user.name}</h2>
                     <p>{session.user.email}</p>
                     <div className="card-actions justify-end">
-                    {session.user.accreditationLevel === 2 && (
-                        <a href="/admin" className="btn btn-primary">
-                            Panneau d&apos;administration
-                        </a>
-                    )}
+                        {session.user.accreditationLevel === 2 && (
+                            <a href="/admin" className="btn btn-primary">
+                                Panneau d&apos;administration
+                            </a>
+                        )}
                         <LogoutButton />
                     </div>
                 </div>
             </div>
         </>
     )
-} 
+}
