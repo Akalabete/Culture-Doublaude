@@ -1,13 +1,11 @@
 import { LogoutButton } from "./LogoutButton";
 import { getRequiredAuthSession } from "../lib/auth";
-import { useRouter } from "next/router";
+import { redirect } from "next/navigation";
 
 export const User = async() => {
     const session = await getRequiredAuthSession();
-    
-    const router = useRouter();
-    const handleAdminClick = () => {
-        router.push("/admin");
+    if (!session) {
+        redirect("/auth/signin");
     }
 
     return (
@@ -22,12 +20,11 @@ export const User = async() => {
                     <h2 className="card-title">{session.user.name}</h2>
                     <p>{session.user.email}</p>
                     <div className="card-actions justify-end">
-                        {session.user.accreditationLevel === 2 && (
-                            <button className="btn btn-primary"
-                                    onClick={handleAdminClick}>
-                                        Panneau d&apos;administration
-                            </button>
-                        )}
+                    {session.user.accreditationLevel === 2 && (
+                        <a href="/admin" className="btn btn-primary">
+                            Panneau d&apos;administration
+                        </a>
+                    )}
                         <LogoutButton />
                     </div>
                 </div>

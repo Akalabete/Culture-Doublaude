@@ -44,6 +44,7 @@ export const authConfig = {
     session : async ({session, user}) => {
       if (session.user){
         session.user.id = user.id;
+        session.user.accreditationLevel = user.accreditationLevel;
       }
       return session;
     },
