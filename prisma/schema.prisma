@@ -58,3 +58,36 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+// concernant ma bdd de référencés :
+model Type {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  categories  Category[]
+}
+
+model Category {
+  id      String      @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  type    Type     @relation(fields: [typeId], references: [id])
+  typeId  String @db.ObjectId
+  cards   ServiceCard[]
+}
+
+model ServiceCard {
+  id                String      @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  adress            String
+  zipcode           Int
+  city              String
+  description       String
+  phone             Int
+  email             String
+  url               String
+  photo             String[]
+  lat               Float
+  long              Float
+  openingDaysHours  Json
+  category          Category  @relation(fields: [categoryId], references: [id])
+  categoryId        String @db.ObjectId
+  }
