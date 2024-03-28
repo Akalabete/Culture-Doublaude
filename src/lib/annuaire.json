@@ -11,10 +11,10 @@
                 "email" : "test@testy.fr",
                 "url" : "www.url1.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -37,10 +37,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -65,10 +65,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -93,10 +93,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -123,10 +123,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -149,10 +149,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -177,10 +177,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -207,10 +207,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -233,10 +233,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -261,10 +261,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -291,10 +291,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -317,10 +317,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {
@@ -345,10 +345,10 @@
                 "email" : "test2@testy.fr",
                 "url" : "www.url2.com",
                 "photo": [
-                    "url1",
-                    "url2",
-                    "url3"
-                ],
+                    { "url": "url1", "alt": "alt1" },
+                    { "url": "url2", "alt": "alt2" },
+                    { "url": "url3", "alt": "alt3" }
+                  ],
                 "lat": 44.8966, 
                 "long": 0.2724,
                 "openingDaysHours": {

@@ -84,7 +84,7 @@ model ServiceCard {
   phone             Int
   email             String
   url               String
-  photo             String[]
+  photo             Json
   lat               Float
   long              Float
   openingDaysHours  Json
