@@ -22,16 +22,16 @@ export const AccountSettingButton = () => {
                         },
                         select: {
                             stripeCustomerId: true,
-                            userPlan: true,
+                           // userPlan: true,
                         },
                     });
 
                     if (!user){
                         throw new Error("No user found");
                     }
-                    if (user.userPlan === "PREMIUM") {
+                   /* if (user.userPlan === "PREMIUM") {
                         throw new Error("User already has a premium plan");
-                    }
+                    }*/
                     const stripeCustomerId = user?.stripeCustomerId ?? undefined;
                     if (!stripeCustomerId) {
                         throw new Error("No stripe customer ID");
